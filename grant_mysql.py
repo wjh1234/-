@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #20150413
+#mysql批量授权脚本。实现ssh登录机器。对多台机器多个系统自动执行mysql授权命令。
 #grant mysql 
 #!/usr/bin/python 
 import paramiko
