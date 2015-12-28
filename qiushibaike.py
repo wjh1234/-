@@ -1,4 +1,5 @@
 # wjhtest
+#爬取糗事百科的段子
 #coding=utf-8
 import time
 import requests 
