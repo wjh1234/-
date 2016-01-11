@@ -1,0 +1,17 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>有道云笔记</title>
+</head>
+<form action={{url_for('register')}} method="post" name="login">
+ {{ form.hidden_tag() }}
+    <p>
+        标题
+        {{form.title(size=120)}}<br>
+    </p>
+    <p>
+		{{form.title.label}} 
+        {{form.text(rows=20,cols=130)}}
+    </p>
+    <p><input type="submit" value="submit"></p>
+</form>

@@ -1,0 +1,47 @@
+<html>
+<head>
+<style type="text/css">
+p{
+   font-size:12px;/*设置文字字号*/
+   color:red;/*设置文字颜色*/
+   font-weight:bold;/*设置字体加粗*/
+}
+span{
+ color:blue;/*设置文字颜色*/
+}
+div.top{
+display:inline-block
+  border-width:2px;
+  border-style:solid;
+  border-color:red;
+}
+</style>
+</head>
+<body>
+<div>
+<div class="top">
+<h>
+Mark的博客
+</h>
+<p>
+<a href={{url_for('register')}} >写博客</a>
+</p>
+</div>
+ {%- for p in p %}
+<div>
+<div class="123">
+<p> 
+<a  href={{url_for('.post',id=p.id)}}><span>{{p.titel}}</span></a>
+</p>
+</div>
+<div  class="456">
+<p>{{p.text|safe}}<br />
+</p>
+<p>
+<a  href={{url_for('.edit',id=p.id)}}>编辑</a>
+<a  href={{url_for('.delete',id=p.id)}}>删除</a>
+</p>
+<hr>
+</div>
+{%- endfor  %}
+</div>

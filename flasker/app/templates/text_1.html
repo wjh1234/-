@@ -1,0 +1,23 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>有道云笔记</title>
+</head>
+<form action={{url_for('.edit',id=post.id)}} method="post" name="login">
+    <p>
+		{{form.text.label}}
+		{{form.id}}
+        {{form.title(size=120)}}
+		{% for error in form.errors.text %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+    </p>
+    <p>
+		{{form.title.label}}
+        {{form.text(rows=20,cols=130)}}
+		{% for error in form.errors.text %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+    </p>
+    <p><input type="submit" value="submit"></p>
+</form>
