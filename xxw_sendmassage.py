@@ -36,7 +36,7 @@ for i in xrange(1,229):
 	title=u"加入新县同城交友群".encode('gbk')
 	n=0
 	func = lambda x,y:x if y in x else x + [y]
-	username=reduce(func, [[], ] + username)
+	username=reduce(func, [[], ] + username)#实现用户名去重
 	for smsuser,name in zip(username,name):
 		smsuser=smsuser.split('username=')[1].split(" ")[0].replace("\"","")
 		name=name.split('target="_blank">')[1].split('</a>')[0]
