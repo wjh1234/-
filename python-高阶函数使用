@@ -1,0 +1,13 @@
+#python高阶函数使用。一个变量可以指向一个函数。一个函数可以通过变量传参的形式传入另外一个函数
+#!/usr/bin/env python
+#coding=utf-8
+import time
+sys.setdefaultencoding("utf-8")
+def abe(x):
+    return  '-x'
+def add(x, y, abe):
+    return abe(x) + abe(y)
+def abe(x):
+    return (-x)
+
+print add(25, 9, abe)
