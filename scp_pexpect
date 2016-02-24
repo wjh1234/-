@@ -1,0 +1,22 @@
+#实现自动化登录服务器，执行scp传输文件。
+#!/usr/bin/env python
+import pexpect
+import sys
+ip=sys.argv[1]
+#dbname=sys.argv[2]
+#dbhost= sys.argv[3:]
+child = pexpect.spawn ( 'ssh -p  10022   -o "StrictHostKeyChecking no"   uss@%s' %(ip))  #  -o "StrictHostKeyChecking no" 取消首次ssh公钥验证
+child.expect('.*password:',timeout=30)
+child.sendline('**888')
+child.expect ('$')
+child.sendline('sudo su -')
+child.expect ('.*for uss:')
+child.sendline ('***8')
+child.expect (' ~]#')
+child.sendline('scp -P 10022   -o "StrictHostKeyChecking no" uss@192.168.56.1:/usr/lib64/ttt.so /root')
+child.expect('.*password:',timeout=40)
+child.sendline('***88')
+child.expect('#')
+#child.expect(pexpect.EOF)
+print child.before
+child.sendline('exit')
