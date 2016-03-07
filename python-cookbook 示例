@@ -1,0 +1,9 @@
+t=[1,4,-1,10,-8]
+import math
+print [ n if n > 0 else 1 for n in t ]
+from itertools import   compress
+address=['323223','woeowoeow','4weiwoe','woeowoe','tty']
+counts=[0,1,12,5,7,2,12]
+more5=[ n>5 for n in counts ]
+print more5
+print list(compress(address,more5))
