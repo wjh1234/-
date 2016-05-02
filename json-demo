@@ -1,0 +1,33 @@
+#encoding:utf-8
+'''
+json demo
+'''
+import requests
+import pprint
+import json
+#json_url='https://movie.douban.com/subject/1295644/'
+
+json1='''
+{"r":0,"subject":{"episodes_count":"","star":"50","blacklisted":"available","title":"这个杀手不太冷 Léon","url":"https:\/\/movie.douban.com\/subject\/1295644\/","collection_status":"","rate":"9.4","short_comment":{"content":"喜欢这个喝牛奶的男人","author":"Cherry"},"is_tv":false,"subtype":"Movie","directors":["吕克·贝松"],"actors":["让·雷诺","娜塔莉·波特曼","加里·奥德曼","丹尼·爱罗","麦温"],"duration":"133分钟(国际版)","region":"法国","playable":false,"id":"1295644","types":["剧情","动作","犯罪"],"release_year":"1994"}}
+'''
+pprint.pprint(json1,indent=4)
+moviehtml=json.loads(json1)
+rate = moviehtml["subject"]["rate"]
+print rate
+title = moviehtml["subject"]["title"]
+print title
+url=moviehtml["subject"]["url"]
+print url
+content=moviehtml["subject"]["short_comment"]['content']
+print content
+directors=moviehtml["subject"]["directors"]
+print directors[0]
+actors=moviehtml["subject"]["actors"]
+print ','.join(actors)
+duration=moviehtml["subject"]["duration"]
+print duration
+region=moviehtml["subject"]["region"]
+print region
+release_year=moviehtml["subject"]["release_year"]
+print release_year
+
