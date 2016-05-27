@@ -1,0 +1,116 @@
+#习题1
+敏感词文本文件
+filtered_words.txt，里面的内容为以下内容，当用户输入敏感词语时，则打印出
+Freedom，否则打印出Human Rights。
+北京  *
+程序员
+公务员
+领导
+牛比
+牛逼
+你娘
+你妈
+love
+sex
+jiangge
+江泽民
+习近平
+法轮功
+
+答案：
+
+
+#!/usr/bin/env python
+#coding:utf-8
+with open('mingan.txt','r') as f:
+        data=f.readlines()
+dic={}
+for tx in data:
+        tx=tx.strip('\n')
+        dic[tx]='freedom'
+a=raw_input('pleasye:')
+if dic.has_key(a):
+        print dic[a]
+else:
+
+
+#习题2
+任一个英文的纯文本文件，统计其中的单词出现的个数。
+
+#!/usr/bin/env python
+#
+import re
+with open('001.txt',"r") as f:
+    data = f.read()
+words = re.compile(r'([a-zA-Z]+)')
+dic= {}
+for x in words.findall(data):
+    if x not in dic:
+        dic[x] = 1
+    else:
+        dic[x] += 1
+#print dic
+l=[]
+for k,v in dic.items():
+        l.append([k,v])
+print l
+
+
+#习题3
+敏感词文本文件 filtered_words.txt，里面的内容 和 0011题一样，当用户输入敏感词语，则用 星号 * 替换，例如当用户输入「北京是个好城市」，则变成「**是个好城市」。
+增加个需求。比如输入牛逼的领导和公务员 变成'**的**和**’
+
+#!/usr/bin/env python
+#encoding:utf-8 
+#a=raw_input("请输入你的句子")
+with open('mingan.txt','r') as f:
+        data=f.readlines()
+data=[line.strip() for line in data]
+a=raw_input('请输入你的句子:')
+for line in  data:
+        if line in a:
+                a= a.replace(line,'**')
+print a
+~                 
+#习题4
+dict1={
+    "1":["张三",150,120,100],
+    "2":["李四",90,99,95],
+    "3":["王五",60,66,68]
+}
+将字典dict1转换为列表
+[['1', '张三', 150, 120, 100],
+ ['3', '王五', 60, 66, 68],
+ ['2', '李四', 90, 99, 95]]
+ 答案：
+ s=[[k]+[v] for k ,v in dict1.items()]
+#习题5
+有文本文件text-2.内容如下,请用python实现。
+abcdea      实现效果  bcde
+bcdefba               cdefa
+cdefgc                defg
+答案：
+with open('test_1.txt','r') as f1,open('test-1.txt','a') as f2:
+        line=[line.strip() for line in f1.readlines()]
+        line=[line.replace(line[0],'') for line in line]
+        print line
+        for line in line:
+                f2.write(line+'\n')
+
+
+
+#习题6
+有一个字典，如何实现key，value 互换{'1':'ip'} ={'ip':'1'}
+如dict3={'ip':'192.168.100.1','address':'shanghai'}
+实现{'192.168.100.1':'ip','shanghai':'address'}
+
+
+答案:
+
+dict2={v:k for k,v in dict1.items()}
+
+
+习题7
+#有一个ip 192.168.1.101 他的密码是tty@1.101  根据python程序生成密码
+
+'tty@'+','.join(ip.split('.')[-2:])
