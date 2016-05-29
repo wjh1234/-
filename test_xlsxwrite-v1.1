@@ -1,0 +1,27 @@
+#coding:utf-8
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+dic={
+    "1":["张三",150,120,100],
+    "2":["李四",90,99,95],
+    "3":["王五",60,66,68]
+}
+
+#tt= [[k]+v for k,v in dic.items()]
+tt=((u'ESB', u'5', u'4', u'\u505c\u673a', u''), (u'ESB', u'5', u'3', u'\u975e\u505c\u673a', u''), (u'ESB', u'5', u'12', u'\u975e\u505c\u673a', u''), (u'ESB', u'5', u'3', u'\u505c\u673a', u'ESB20160528'))
+import xlsxwriter
+table_head=(u'业务',u'月份',u'部署时间',u'状态',u'版本号')
+workbook=xlsxwriter.Workbook('demo2.xlsx')
+worksheet=workbook.add_worksheet()
+format=workbook.add_format()
+format.set_border(1)
+length=len(tt)
+row=1
+print length
+worksheet.write_row('A1', table_head, format)
+for i in xrange(length):
+    row='A'+str(i+2)
+    worksheet.write_row(row,tt[i],format)
+    print row
+workbook.close()
