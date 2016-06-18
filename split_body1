@@ -1,0 +1,19 @@
+with  open('12.txt', 'r') as f1:
+	line = [item.strip() for item in f1.readlines()]
+	res=[]
+	for lines  in line:
+		apps=lines.split(' ')[0].split(',')
+		for app in apps:
+			result=[app]+lines.split()[1:]
+			res.append(result)
+	res3=[]
+	for res2 in res:
+		if res2 not in res3:
+			res3.append(res2)
+	print res3
+	
+文件内容示例
+sams SAMS1  2  /tmp/1.txt  20160513
+sams,sams2,sams2  SAMS2  2  /tmp/2.txt 20160612
+功能
+第一列可能有两个。用逗号分隔的。。通过split切分好。然后按照第一列排序
