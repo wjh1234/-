@@ -4,16 +4,8 @@
 	'''
 	# your code
 	
-	
-	
 import re
 s2=[1, 3,[5, 6, [9, 10], [11,[12, [13, 14]]], 15]]
-s3=[]
-for a in s2:
-    a=str(a)
-    a=re.sub('\[|\]','',a)
-    s3.append(a)
-a=','.join(s3).split(' ')
-a1=a[0]=filter(None,a[0].split(','))
-print a1+a[1:]
-
+s3=re.findall('\d+',str(s2))
+s3=[int(a) for  a  in s3 ]
+print s3
