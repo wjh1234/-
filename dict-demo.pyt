@@ -1,5 +1,7 @@
 
-#!/usr/bin/env python 
+#!/usr/bin/env python
+
+
 '''
   二维数据累加
   通过字典对列表的元素做索引，对符合要求的数据进行累加
