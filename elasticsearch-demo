@@ -1,0 +1,26 @@
+#coding:utf-8
+###ES后台接口查询方法demo
+from elasticsearch import Elasticsearch
+es = Elasticsearch([{'host':'10.230.28.94','port':9200}])
+##search
+#t=es.search(index='cubc_asset', q='user_type:2 AND user_code:000001')
+t=es.search(index='cubc_asset', q='user_type:1')
+
+p=es.search(index='cubc_asset',
+body={
+    'size':100,
+    'query':{
+    'range':{
+        "create_date" :{
+            'from':'2017-02-10','to':'2017-02-20',
+        }
+    }
+    }
+})
+x=0
+result=p['hits']['hits']
+for result1 in result:
+    x+=1
+    print result1
+print x
+
