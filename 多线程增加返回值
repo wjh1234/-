@@ -1,0 +1,28 @@
+#coding:utf-8
+''''
+改写多线程的原类
+'''
+import threading
+from  time import ctime
+def hello(*n):
+    print n
+    return n
+class mythread(threading.Thread):
+    def __init__(self,func,args,name=''):
+        ##改写父类的初始化方式
+        threading.Thread.__init__(self)
+        self.name=name
+        self.func=func
+        self.args=args
+        #改写run方法，增加调试参数
+    def run(self):
+        print 'starting',self.name,'at:',\
+        ctime()
+        self.res=self.func(*self.args)
+   #获取函数返回值
+    def getresult(self):
+        print self.res
+        return self.res
+t=mythread(func=hello,args=(1,2))
+t.start()
+t.getresult()
