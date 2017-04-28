@@ -5,7 +5,7 @@
 # 用户自定义选项
 FRAMEWORK_DIR="/opt/jboss-eap"      # srm 根目录
 BASE_DIR="/opt/apps"            	# war 包根目录
-DPAP_DIR="/opt/oms-common"
+DPAP_DIR="/opt/tty-common"
 
 # 保持系统环境变量编码
 export LC_ALL=en_US.UTF-8
