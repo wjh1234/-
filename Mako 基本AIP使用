@@ -1,0 +1,7 @@
+from mako.template import Template
+In [3]: template=Template('hello, ${name}')
+In [4]: template.render(name='weowoeowe')
+Out[4]: u'hello, weowoeowe'
+
+
+Mako的变量使用了%{...}风格
