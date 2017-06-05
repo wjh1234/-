@@ -1,0 +1,11 @@
+ import sets
+magic_chars=sets.Set('abcdefg')
+magic_char=sets.Set('abcddy')
+print '',join(magic_chars & magic_char) ###集合交集
+
+
+In [33]: print 'hej'.center(20,'+')    ###填充字符
+++++++++hej+++++++++
+
+
+
