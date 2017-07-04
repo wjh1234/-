@@ -1,0 +1,23 @@
+def _convert_to_float(self, value):
+        try:
+            val = float(value) if value else 0.0
+        except:
+            val = 0.0
+
+        return val
+
+    def _millisecond_convert_to_second(self, microsecond):
+        microsecond = self._convert_to_float(microsecond)
+        return microsecond / 1000
+
+    def _byte_convert_to_kbyte(self, byte):
+        byte = self._convert_to_float(byte)
+        return byte / 1024
+
+    def _mbyte_convert_to_kbyte(self, mbyte):
+        mbyte = self._convert_to_float(mbyte)
+        return mbyte * 1024
+
+    def _decimal_convert_to_percent(self, decimal):
+        decimal = self._convert_to_float(decimal)
+        return decimal * 100
