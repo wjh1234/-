@@ -1,0 +1,9 @@
+export JAVA_HOME="/opt/jdk"
+export LD_LIBRARY_PATH="/opt/cubc-common/share-lib"
+export JAVA_OPTS="-Xms1024m -Xmx1024m -XX:+UseParallelGC -XX:MaxPermSize=1024m -Xss512k -XX:+HeapDumpOnOutOfMemoryError -Dorg.jboss.resolver.warning=true
+-Dfile.encoding=zh_CN.UTF-8
+-Djava.security.egd=file:///dev/urandom
+-Dsun.rmi.dgc.client.gcInterval=3600000
+-Dsun.rmi.dgc.server.gcInterval=3600000
+-Dsun.lang.ClassLoader.allowArraySyntax=true
+-Djava.awt.headless=true"
