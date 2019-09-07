@@ -1,0 +1,15 @@
+统计理列表元素的出现的频次
+data=[randint(10,20) for  _  in   range(100)]
+c=dict.fromkeys(data,0)
+for x in data:
+    c[x]+=1
+print c
+方法2
+from  collections import Counter
+data是列表
+c2=Counter(data)
+print c2.most_common(3)
+对字典进行排序。如对数字的元素进行排序
+data={randint(20,100):x for x in 'xybze'}
+print data
+print sorted(data.items(),key=lambda x:x[0])
