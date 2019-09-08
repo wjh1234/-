@@ -5,10 +5,11 @@ for x in data:
     c[x]+=1
 print c
 方法2
+使用 collections模块计算元素的频率
 from  collections import Counter
 data是列表
 c2=Counter(data)
-print c2.most_common(3)
+print c2.most_common(3)###字典里面按数字大小排序
 对字典进行排序。如对数字的元素进行排序
 data={randint(20,100):x for x in 'xybze'}
 print data
